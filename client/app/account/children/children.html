@@ -1,0 +1,189 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="col-md-12" ng-show="accountFinished()">
+  <p style="color:red; font-weight:bold; text-align:center;">Error:  This account already has children entered  <a id="homeclick" href="/home" style=" text-decoration:underline">Return Home</a></p>
+</div>
+
+<div class="col-md-12" ng-show="isLoggedIn()">Please log in before viewing this page</div>
+
+<!--
+Alright we gotta to basically have input fields and then we gotta push the entries into the children array, leggo!
+
+also check the isloggedin thing
+
+Ok, so looks like it goes children.controller > auth.controller > user.controller.  Make sure to update things like server/api/user/index.js
+-->
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6" ng-show="oneChildren() && !accountFinished()">
+      <h4>Add first name of child</h4>
+      <form class="form" name="form1" autocomplete="off">
+        <input type="text" name="childOne" class="form-control" ng-model="childOne" required autofocus/>
+        <div>
+          <button class="btn btn-default" type="submit" ng-click="addChildrenOne(form1)">
+            Add Child
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-md-6" ng-show="twoChildren() && !accountFinished()">
+      <h4>Add first name of all children</h4>
+      <form class="form" name="form2"  autocomplete="off">
+
+        <input type="text" name="childOne" class="form-control" ng-model="childOne" required/>
+        <input type="text" name="childTwo" class="form-control" ng-model="childTwo" required/>
+
+        <div>
+          <button class="btn btn-default" ng-click="addChildrenTwo(form2)">
+            Add Children
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="col-md-6" ng-show="threeChildren() && !accountFinished()">
+      <h4>Add first name of all children</h4>
+      <form class="form" name="form3"  autocomplete="off">
+
+        <input type="text" name="childOne" class="form-control" ng-model="childOne" required/><br>
+        <input type="text" name="childTwo" class="form-control" ng-model="childTwo" required/><br>
+        <input type="text" name="childThree" class="form-control" ng-model="childThree" required/><br>
+
+        <div>
+          <button class="btn btn-default" ng-click="addChildrenThree(form3)">
+            Add Children
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="col-md-6" ng-show="fourChildren() && !accountFinished()">
+      <h4>Add first name of all children</h4>
+      <form class="form" name="form4"  autocomplete="off">
+
+        <input type="text" name="childOne" class="form-control" ng-model="childOne" required/>
+        <input type="text" name="childTwo" class="form-control" ng-model="childTwo" required/>
+        <input type="text" name="childThree" class="form-control" ng-model="childThree" required/>
+        <input type="text" name="childFour" class="form-control" ng-model="childFour" required/>
+        
+        <div>
+          <button class="btn btn-default" ng-click="addChildrenFour(form4)">
+            Add Children
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="col-md-6" ng-show="fiveChildren() && !accountFinished()">
+      <h4>Add first name of all children</h4>
+      <form class="form" name="form5"  autocomplete="off">
+
+        <input type="text" name="childOne" class="form-control" ng-model="childOne" required/>
+        <input type="text" name="childTwo" class="form-control" ng-model="childTwo" required/>
+        <input type="text" name="childThree" class="form-control" ng-model="childThree" required/>
+        <input type="text" name="childFour" class="form-control" ng-model="childFour" required/>
+        <input type="text" name="childFive" class="form-control" ng-model="childFive" required/>
+        
+        <div>
+          <button class="btn btn-default" ng-click="addChildrenFive(form5)">
+            Add Children
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="col-md-6" ng-show="sixChildren() && !accountFinished()">
+      <h4>Add first name of all children</h4>
+      <form class="form" name="form6"  autocomplete="off">
+
+        <input type="text" name="childOne" class="form-control" ng-model="childOne" required/>
+        <input type="text" name="childTwo" class="form-control" ng-model="childTwo" required/>
+        <input type="text" name="childThree" class="form-control" ng-model="childThree" required/>
+        <input type="text" name="childFour" class="form-control" ng-model="childFour" required/>
+        <input type="text" name="childFive" class="form-control" ng-model="childFive" required/>
+        <input type="text" name="childSix" class="form-control" ng-model="childSix" required/>
+        
+        <div>
+          <button class="btn btn-default" ng-click="addChildrenSix(form6)">
+            Add Children
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="col-md-6" ng-show="sevenChildren() && !accountFinished()">
+      <h4>Add first name of all children</h4>
+      <form class="form" name="form7"  autocomplete="off">
+
+        <input type="text" name="childOne" class="form-control" ng-model="childOne" required/>
+        <input type="text" name="childTwo" class="form-control" ng-model="childTwo" required/>
+        <input type="text" name="childThree" class="form-control" ng-model="childThree" required/>
+        <input type="text" name="childFour" class="form-control" ng-model="childFour" required/>
+        <input type="text" name="childFive" class="form-control" ng-model="childFive" required/>
+        <input type="text" name="childSix" class="form-control" ng-model="childSix" required/>
+        <input type="text" name="childSeven" class="form-control" ng-model="childSeven" required/>
+        
+        <div>
+          <button class="btn btn-default" ng-click="addChildrenSeven(form7)">
+            Add Children
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="col-md-6" ng-show="eightChildren() && !accountFinished()">
+      <h4>Add first name of all children</h4>
+      <form class="form" name="form8"  autocomplete="off">
+
+        <input type="text" name="childOne" class="form-control" ng-model="childOne" required/>
+        <input type="text" name="childTwo" class="form-control" ng-model="childTwo" required/>
+        <input type="text" name="childThree" class="form-control" ng-model="childThree" required/>
+        <input type="text" name="childFour" class="form-control" ng-model="childFour" required/>
+        <input type="text" name="childFive" class="form-control" ng-model="childFive" required/>
+        <input type="text" name="childSix" class="form-control" ng-model="childSix" required/>
+        <input type="text" name="childSeven" class="form-control" ng-model="childSeven" required/>
+        <input type="text" name="childEight" class="form-control" ng-model="childEight" required/>
+        
+        <div>
+          <button class="btn btn-default" ng-click="addChildrenEight(form8)">
+            Add Children
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="col-md-6" ng-show="nineChildren() && !accountFinished()">
+      <h4>Add first name of all children</h4>
+      <form class="form" name="form9"  autocomplete="off">
+
+        <input type="text" name="childOne" class="form-control" ng-model="childOne" required/>
+        <input type="text" name="childTwo" class="form-control" ng-model="childTwo" required/>
+        <input type="text" name="childThree" class="form-control" ng-model="childThree" required/>
+        <input type="text" name="childFour" class="form-control" ng-model="childFour" required/>
+        <input type="text" name="childFive" class="form-control" ng-model="childFive" required/>
+        <input type="text" name="childSix" class="form-control" ng-model="childSix" required/>
+        <input type="text" name="childSeven" class="form-control" ng-model="childSeven" required/>
+        <input type="text" name="childEight" class="form-control" ng-model="childEight" required/>
+        <input type="text" name="childNine" class="form-control" ng-model="childNine" required/>
+        
+        <div>
+          <button class="btn btn-default" ng-click="addChildrenNine(form9)">
+            Add Children
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</div>
+<div ng-include="'components/footer/footer.html'"></div>

@@ -1,0 +1,27 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<!--
+For formatting the icons see this, probably do a list on the right of each pane
+-->
+
+<div class="container" ng-show="isAdminCurrentUser()">
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="user in users | orderBy: 'role'">
+        <strong>{{user.name}}</strong><br>
+        <span class="text-muted">Account Type:  {{user.role}}</span><br>
+        <span class="text-muted">PIN:  {{user.PIN}}</span><br>
+        <span class="text-muted">Email:  {{user.email}}</span><br>
+        <span class="text-muted">Phone:  {{user.phone}}</span><br>
+        <span class="text-muted">Children:  {{user.children}}</span>
+        <a ng-show="!isAdmin(user)" ng-click="makeAdmin(user)" class="plus" title="Make Admin"><span class="fa fa-shield fa-2x pull-right"></span></a>
+        <a ng-show="isAdmin(user)" ng-click="demoteAdmin(user)" class="minus" title="Demote Admin"><span class="fa fa-user-plus fa-2x pull-right"></span></a>
+        <a ng-show="!isCurrentUser(user)" ng-click="deleteUser(user)" class="trash" title="Delete User"><span style="color:red" class="fa fa-trash-o fa-2x pull-right"></span></a>
+    </li>
+  </ul>
+</div>
+
+<div class="col-md-12" ng-show="!isAdminCurrentUser()">
+    <p style="color:red; font-weight:bold; text-align:center;">Error:  You do not have access to this page  <a id="homeclick" href="/home" style=" text-decoration:underline">Return Home</a></p>
+</div>
+
+<div ng-include="'components/footer/footer.html'"></div>

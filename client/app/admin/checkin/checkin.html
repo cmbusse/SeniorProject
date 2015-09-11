@@ -1,0 +1,39 @@
+<div ng-hide="isAdmin(user)" ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="check-in">
+	<div class="container" ng-show="isAdmin()">
+		<div class="col-sm-12">
+		  <h1 style="text-align: center">Child Check In</h1>
+		  <ds-widget-clock show-digital digital-format="'EEEE MMMM d, yyyy hh:mm:ss a '">></ds-widget-clock>
+		  <h3 style="text-align: center">Parents, please enter your Email and Password</h3>
+		</div>
+		<form class="form-horizontal" name="form" ng-submit="" novalidate>
+			<!-- fake fields are a workaround for chrome autofill getting the wrong fields -->
+          <input style="display:none" type="text" name="fakeusernameremembered"/>
+          <input style="display:none" type="password" name="fakepasswordremembered"/>
+			<div class="form-group">
+				<label for="email" class="col-sm-2 control-label">Email:  </label>
+				<div class="col-sm-10">
+					<input type="email" name="email" class="form-control" ng-model="user.email" required/>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="password" class="col-sm-2 control-label">Password:  </label>
+				<div class="col-sm-10">
+					<input type="password" name="password" class="form-control" ng-model="user.password" required>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-default">Sign in</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div class="col-md-12" ng-show="!isAdmin()">
+    	<p style="color:red; font-weight:bold; text-align:center;">Error:  You do not have access to this page  <a id="homeclick" href="/home" style=" text-decoration:underline">Return Home</a></p>
+	</div>
+</header>
