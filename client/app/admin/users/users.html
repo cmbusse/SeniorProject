@@ -7,7 +7,7 @@ For formatting the icons see this, probably do a list on the right of each pane
 <div class="container" ng-show="isAdminCurrentUser()">
   <ul class="list-group">
     <li class="list-group-item" ng-repeat="user in users | orderBy: 'role'">
-        <strong>{{user.name}}</strong><br>
+        <strong>{{user.firstName}} {{user.lastName}}</strong><br>
         <span class="text-muted">Account Type:  {{user.role}}</span><br>
         <span class="text-muted">PIN:  {{user.PIN}}</span><br>
         <span class="text-muted">Email:  {{user.email}}</span><br>
