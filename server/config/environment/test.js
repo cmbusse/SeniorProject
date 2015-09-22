@@ -5,6 +5,6 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://seniorprojectbct:Einstein@ds061787.mongolab.com:61787/daycamp'
+    uri: 'mongodb://dev:dev@ds051933.mongolab.com:51933/daycamp'
   }
 };

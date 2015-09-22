@@ -5,7 +5,7 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/daycamp-dev'
+    uri: 'mongodb://dev:dev@ds051933.mongolab.com:51933/daycamp'
   },
-  //seedDB: true
+  seedDB: true
 };
