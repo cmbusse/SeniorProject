@@ -19,6 +19,7 @@ User.find({}).remove(function() {
     phone:  '5557654321',
     numChildren:  '2',
     accountFinished:  'true',
+    active: 'true',
     children: ["Billy", "Sally"]
   }, {
     provider: 'local',
@@ -30,6 +31,7 @@ User.find({}).remove(function() {
     password: 'admin',
     phone: '5551234567',
     accountFinished:  'true',
+    active: 'true',
     numChildren:  '0'
   }, function() {
       console.log('finished populating users');

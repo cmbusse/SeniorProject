@@ -16,6 +16,11 @@ var UserSchema = new Schema({
     type: Boolean,
     default: 'false'
   },
+  active: { /* Active status would be used for User Wide Email Lists, etc. */
+    type: Boolean,
+    default: 'true'
+    //TODO:  Add in Admin support for changing this status
+  },
   phone: String,
   PIN: String,
   numChildren: Number,

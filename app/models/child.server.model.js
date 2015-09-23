@@ -29,6 +29,12 @@ var ChildSchema = new Schema({
 	timePunches: [{
 		dateTimeIn: String,
 		dateTimeOut: String
+		/* TODO - If Time Allows
+		Add a way to track edits to the time punches
+		Tracks if an entry has been edited
+		Who it was edited by
+		What the changes were
+		*/
 	}],
 	created: {
 		type: Date,
