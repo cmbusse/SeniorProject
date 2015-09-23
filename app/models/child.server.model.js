@@ -10,32 +10,12 @@ var mongoose = require('mongoose'),
  * Child Schema
  */
 var ChildSchema = new Schema({
-	firstName: {
+	name: {
 		type: String,
 		default: '',
-		required: 'Please fill child\'s first name',
+		required: 'Please fill Child name',
 		trim: true
 	},
-	lastName: {
-		type: String,
-		default: '',
-		required: 'Please fill child\'s last name',
-		trim: true
-	},
-	dob: {
-		type: Date,
-		required: 'Please fill in child\'s date of birth'
-	},
-	timePunches: [{
-		dateTimeIn: String,
-		dateTimeOut: String
-		/* TODO - If Time Allows
-		Add a way to track edits to the time punches
-		Tracks if an entry has been edited
-		Who it was edited by
-		What the changes were
-		*/
-	}],
 	created: {
 		type: Date,
 		default: Date.now
