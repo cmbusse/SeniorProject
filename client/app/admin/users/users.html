@@ -1,7 +1,8 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <!--
-For formatting the icons see this, probably do a list on the right of each pane
+If font-awesome icons won't load do this in directory:
+bower install components-font-awesome --save
 -->
 
 <div class="container" ng-show="isAdminCurrentUser()">
@@ -13,7 +14,7 @@ For formatting the icons see this, probably do a list on the right of each pane
         <span class="text-muted">Email:  {{user.email}}</span><br>
         <span class="text-muted">Phone:  {{user.phone}}</span><br>
         <span class="text-muted">Children:  {{user.children}}</span>
-        <a ng-show="!isAdmin(user)" ng-click="makeAdmin(user)" class="plus" title="Make Admin"><span class="fa fa-shield fa-2x pull-right"></span></a>
+        <a ng-show="!isAdmin(user)" ng-click="makeAdmin(user)" class="plus" title="Make Admin"><span class="glyphicons glyphicons-shield"></span></a>
         <a ng-show="isAdmin(user)" ng-click="demoteAdmin(user)" class="minus" title="Demote Admin"><span class="fa fa-user-plus fa-2x pull-right"></span></a>
         <a ng-show="!isCurrentUser(user)" ng-click="deleteUser(user)" class="trash" title="Delete User"><span style="color:red" class="fa fa-trash-o fa-2x pull-right"></span></a>
     </li>

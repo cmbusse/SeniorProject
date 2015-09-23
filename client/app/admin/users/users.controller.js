@@ -7,6 +7,7 @@ angular.module('dayCampApp')
     $scope.me = User.get();
     // Use the User $resource to fetch all users
     $scope.users = User.query();
+    // Specifically checks if currently logged in user is an admin
     $scope.isAdminCurrentUser = Auth.isAdmin;
 
     $scope.deleteUser = function(user) {
@@ -35,6 +36,7 @@ angular.module('dayCampApp')
       return user._id === $scope.me._id;
     };
 
+    //Checks to see if a user is an admin
     $scope.isAdmin = function(user) {
       return user.role === 'admin';
     }

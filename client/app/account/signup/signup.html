@@ -78,7 +78,7 @@ TODO:  Add in placeholder="thing" to all the fields on all forms
         </div>
 
         <div class="row">
-          <div class="col-sm-4">
+          <div class="col-sm-6">
             <div class="form-group" ng-class="{ 'has-success': form.password.$valid && submitted,
                                                 'has-error': form.password.$invalid && submitted }">
               <label>Password</label>
@@ -98,28 +98,7 @@ TODO:  Add in placeholder="thing" to all the fields on all forms
             </div>
           </div>
 
-          <div class="col-sm-4">
-            <!--
-            <div class="form-group" ng-class="{ 'has-success': form.password.$valid && submitted,
-                                                'has-error': form.password.$invalid && submitted }">
-                                              -->
-              <label>Confirm Password</label><span>   TODO: This isn't implemented</span>
-
-              <input type="password" name="password" class="form-control" ng-model="user.password"
-                     ng-minlength="3"
-                     required
-                     mongoose-error
-                     autocomplete="off"/>
-              <p class="help-block"
-                 ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted">
-                Password must be at least 3 characters.
-              </p>
-              <p class="help-block" ng-show="form.password.$error.mongoose">
-                {{ errors.password }}
-              </p>
-            </div>
-
-          <div class="col-sm-4">
+          <div class="col-sm-6">
             <div class="form-group" ng-class="{ 'has-success': form.numChildren.$valid && submitted,
                                                 'has-error': form.numChildren.$invalid && submitted }">
               <label>Number of Children to Enroll</label>

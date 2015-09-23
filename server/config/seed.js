@@ -11,7 +11,7 @@ var User = require('../api/user/user.model');
 User.find({}).remove(function() {
   User.create({
     provider: 'local',
-    PIN:  '1111',
+    PIN:  '0001',
     firstName: 'Test',
     lastName: 'User',
     email: 'test@test.com',
